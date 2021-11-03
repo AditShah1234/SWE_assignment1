@@ -1,0 +1,124 @@
+ 
+ <!DOCTYPE html>
+ <html>
+ <head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+ body {font-family: Arial, Helvetica, sans-serif;}
+ form {border: 3px solid #f1f1f1;}
+ 
+ input[type=text], input[type=password] {
+   width: 100%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   display: inline-block;
+   border: 1px solid #ccc;
+   box-sizing: border-box;
+ }
+ 
+ button {
+   background-color: #8e1cf8;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 10%;
+ }
+ 
+ button:hover {
+   opacity: 0.8;
+ }
+  
+
+
+ 
+
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+ 
+ 
+ #button2{
+background-color: #fa1212;
+width: 300px;
+height: 40px;
+}
+ </style>
+ </head>
+ <body>
+ <h1>Welcome {{Name}}</h1>
+ 
+ 
+    <form method="POST" enctype="multipart/form-data">
+        <h3> Latitude : {{X}}</h3>
+        <h3> Longitude : {{Y}}</h3>
+        
+ 
+        <button type="submit">Get Co-ordinate </button>
+        
+    </form>
+    <!-- <form action="/forward/" method="post">
+      <button name="forwardBtn" type="submit">Forward</button>
+  </form> -->
+  <h2> LOCK STATUS </h2>
+  <label class="switch">
+    <input type="checkbox">
+    <span class="slider"></span>
+  </label>
+
+  <h2> GET THE CURRENT LOCATION </h2>
+  <button onclick="location.href='{{HTML}}'">Get Direction</button>
+  </body>
+  <p></p>
+  <button type="button contact-button" id="button2">Logout</button>
+
+ </html>
