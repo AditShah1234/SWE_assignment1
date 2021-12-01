@@ -1,5 +1,6 @@
  
- <!DOCTYPE html>
+{% import "bootstrap/wtf.html" as wtf %}
+<!DOCTYPE html>
  <html>
  <head>
  <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,11 +85,17 @@ input:checked + .slider:before {
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
-
+#history{
+background-color: #8e1cf8;
+color: white;
+width: 300px;
+height: 40px;
+}
  
  
  #button2{
 background-color: #fa1212;
+color: white;
 width: 300px;
 height: 40px;
 }
@@ -101,14 +108,11 @@ height: 40px;
     <form method="POST" enctype="multipart/form-data">
         <h3> Latitude : {{X}}</h3>
         <h3> Longitude : {{Y}}</h3>
-        
- 
+
         <button type="submit">Get Co-ordinate </button>
         
     </form>
-    <!-- <form action="/forward/" method="post">
-      <button name="forwardBtn" type="submit">Forward</button>
-  </form> -->
+   
   <h2> LOCK STATUS </h2>
   <label class="switch">
     <input type="checkbox">
@@ -117,6 +121,21 @@ height: 40px;
 
   <h2> GET THE CURRENT LOCATION </h2>
   <button onclick="location.href='{{HTML}}'">Get Direction</button>
+
+
+  <h2> GET History </h2>
+
+
+  <form method="POST" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{ wtf.form_field(form.date) }}
+    {{ wtf.form_field(form.time) }}
+    {{ wtf.form_field(form.period) }}
+    <input type="submit" name="submit_button" id = "history" value="Get history">
+    
+    
+</form>
+
   </body>
   <p></p>
   <button type="button contact-button" id="button2">Logout</button>
