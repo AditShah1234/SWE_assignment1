@@ -1,3 +1,5 @@
+
+   
  
 {% import "bootstrap/wtf.html" as wtf %}
 <!DOCTYPE html>
@@ -104,10 +106,10 @@ height: 40px;
  <body>
  <h1>Welcome {{Name}}</h1>
  
- 
-    <form method="POST" enctype="multipart/form-data">
-        <h3> Latitude : {{X}}</h3>
-        <h3> Longitude : {{Y}}</h3>
+
+    <form enctype="multipart/form-data" action="/dashboard">
+        <h3> Latitude : {{x}}</h3>
+        <h3> Longitude : {{y}}</h3>
 
         <button type="submit">Get Co-ordinate </button>
         
@@ -120,7 +122,7 @@ height: 40px;
   </label>
 
   <h2> GET THE CURRENT LOCATION </h2>
-  <button onclick="location.href='{{HTML}}'">Get Direction</button>
+  <button onclick="location.href='{{html}}'">Get Direction</button>
 
 
   <h2> GET History </h2>
@@ -135,9 +137,9 @@ height: 40px;
     
     
 </form>
-
   </body>
   <p></p>
-  <button type="button contact-button" id="button2">Logout</button>
+  <button type="button contact-button" id="button2"  href="{{ url_for('login') }}">Logout</button>
 
  </html>
+
